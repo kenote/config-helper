@@ -1,14 +1,16 @@
 {
-  "name": "config-helper",
+  "name": "kenote-config-helper",
   "version": "1.0.0",
-  "description": "config helper",
-  "main": "index.js",
+  "description": "configuration helper.",
+  "main": "dist/index.js",
   "typings": "types/index.d.ts",
   "repository": "https://github.com/kenote/config-helper.git",
   "author": "thondery <thondery@163.com>",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "rm -rf ./dist && tsc && cp ./types/*.server.d.ts ./dist",
+    "postinstall": "npm run build"
   },
   "devDependencies": {
     "@types/fs-extra": "^7.0.0",
@@ -20,28 +22,18 @@
     "tslint": "^5.18.0",
     "typescript": "^3.5.2"
   },
-  "jest": {
-    "collectCoverage": true,
-    "rootDir": "tests",
-    "transform": {
-      "^.+\\.tsx?$": "ts-jest"
-    },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ],
-    "moduleDirectories": [
-      "node_modules",
-      "src"
-    ]
-  },
   "dependencies": {
     "fs-extra": "^8.0.1",
     "validator": "^11.0.0"
-  }
+  },
+  "engines": {
+    "node": ">8.0.0"
+  },
+  "keywords": [
+    "config",
+    "store",
+    "helper",
+    "assistant",
+    "typescript"
+  ]
 }

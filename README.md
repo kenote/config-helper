@@ -2,6 +2,8 @@
 
 Configuration helper
 
+[![NPM Version][npm-image]][npm-url]
+[![NPM Downloads][downloads-image]][downloads-url]
 [![Build Status][travis-image]][travis-url]
 [![Gratipay][licensed-image]][licensed-url]
 
@@ -61,7 +63,7 @@ navs:
 
 ```typescript
 import { KenoteConfig, Channel, getChannelId } from 'kenote-config-helper'
-import { loadData } from 'kenote-config-helper/utils.server'
+import { loadData } from 'kenote-config-helper/dist/utils.server'
 
 const channels: KenoteConfig.Channel[] = <KenoteConfig.Channel[]> loadData('data/channels', 'array')
 
@@ -83,6 +85,10 @@ if (channel) {
 
 this repo is released under the [MIT License][licensed-url].
 
+[npm-image]: https://img.shields.io/npm/v/kenote-config-helper.svg
+[npm-url]: https://www.npmjs.com/package/kenote-config-helper
+[downloads-image]: https://img.shields.io/npm/dm/kenote-config-helper.svg
+[downloads-url]: https://www.npmjs.com/package/kenote-config-helper
 [travis-image]: https://travis-ci.com/kenote/config-helper.svg?branch=master
 [travis-url]: https://travis-ci.com/kenote/config-helper
 [licensed-image]: https://img.shields.io/badge/license-MIT-blue.svg
