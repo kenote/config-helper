@@ -8,8 +8,7 @@
   "author": "thondery <thondery@163.com>",
   "license": "MIT",
   "scripts": {
-    "test": "jest",
-    "tslint": "tslint"
+    "test": "jest"
   },
   "devDependencies": {
     "@types/fs-extra": "^7.0.0",
