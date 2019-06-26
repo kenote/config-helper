@@ -1,6 +1,6 @@
 {
   "name": "kenote-config-helper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "configuration helper.",
   "main": "dist/index.js",
   "typings": "types/index.d.ts",
@@ -25,6 +25,10 @@
   "dependencies": {
     "fs-extra": "^8.0.1",
     "validator": "^11.0.0"
+  },
+  "peerDependencies": {
+    "js-yaml": ">3.12",
+    "@types/node": ">10.14"
   },
   "engines": {
     "node": ">8.0.0"
