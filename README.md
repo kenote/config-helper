@@ -81,6 +81,40 @@ if (channel) {
 }
 ```
 
+### Use Error Set
+
+```ts
+import { useError, Maps } from 'kenote-config-helper'
+
+const code: Maps<number> = {
+  ERROR_STATUS_NULL                : 0,
+  ERROR_AUTH_FLAG_ACCESS           : 1001
+}
+const message: Maps<string> = {
+  ERROR_STATUS_NULL                : 'Request Success!',
+  ERROR_AUTH_FLAG_ACCESS           : '没有访问该页面的权限'
+}
+const start: number = 1000
+
+const { __ErrorCode, __ErrorMessage, ErrorInfo } = useError(code, message, start)
+
+// thrown custom error
+throw ErrorInfo(__ErrorCode.ERROR_AUTH_FLAG_ACCESS)
+
+// handing errors
+try {
+  // ...
+} catch (error) {
+  if (CustomError(error)) {
+    // custom error
+  }
+  else {
+    // system error
+  }
+}
+```
+
+
 ## License
 
 this repo is released under the [MIT License][licensed-url].

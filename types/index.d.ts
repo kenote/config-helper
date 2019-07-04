@@ -7,15 +7,20 @@ import { KenoteConfigQueryer } from './queryer'
 import { KenoteConfigQuerySelect } from './queryselect'
 import { KenoteConfigRule } from './rule'
 import { KenoteConfigSubmit } from './submit'
-import { Channel, getChannelId, accessNavs } from '../src'
+import { KenoteConfigError, KenoteConfigErrorInfo, KenoteConfigErrorState } from './error'
+import { Channel, getChannelId, accessNavs, useError } from '../src'
 
 export {
   accessNavs,
   Channel,
   getChannelId,
+  useError,
   KenoteConfigCardEmit as CardEmit,
   KenoteConfigColumnEmit as ColumnEmit,
   KenoteConfigColumns as Columns,
+  KenoteConfigError as IError,
+  KenoteConfigErrorInfo as IErrorInfo,
+  KenoteConfigErrorState as IErrorState,
   KenoteConfigFetch as Fetch,
   KenoteConfigFormat as Format,
   KenoteConfigKeyMap as KeyMap,
@@ -33,6 +38,9 @@ export declare namespace KenoteConfig {
   type CardEmit = KenoteConfigCardEmit
   type ColumnEmit = KenoteConfigColumnEmit
   type Columns = KenoteConfigColumns
+  type IError = KenoteConfigError
+  type IErrorInfo = KenoteConfigErrorInfo
+  type IErrorState = KenoteConfigErrorState
   type Fetch = KenoteConfigFetch
   type Format = KenoteConfigFormat
   type KeyMap<T> = KenoteConfigKeyMap<T>
