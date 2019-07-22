@@ -127,7 +127,7 @@ function processFiles (files: string[], options: IDeploy.UploadOptions): IDeploy
     let filename: string = item.replace(new RegExp(`^(${workspace})`), '')
     let filepath: string = item
     let dest: string = path.join(deployTo || '/home', filename)
-    let file: IDeploy.UploadFile = { filename, filepath, dest}
+    let file: IDeploy.UploadFile = { filename, filepath, dest }
     rules && rules.forEach( rule => {
       customDest(file, rule, deployTo)
     })
