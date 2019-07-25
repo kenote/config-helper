@@ -1,6 +1,6 @@
 /// <reference path="scp2.d.ts" />
 
-import { KenoteConfigChannel } from './channel'
+import { KenoteConfigChannel, KenoteConfigAccessNavs, KenoteConfigGetChannelId, KenoteConfigChannelNav } from './channel'
 import { KenoteConfigColumns } from './columns'
 import { KenoteConfigCardEmit, KenoteConfigColumnEmit, KenoteConfigPageEmit } from './emit'
 import { KenoteConfigFormat } from './format'
@@ -9,17 +9,16 @@ import { KenoteConfigQueryer } from './queryer'
 import { KenoteConfigQuerySelect } from './queryselect'
 import { KenoteConfigRule } from './rule'
 import { KenoteConfigSubmit } from './submit'
-import { KenoteConfigError, KenoteConfigErrorInfo, KenoteConfigErrorState } from './error'
+import { KenoteConfigError, KenoteConfigErrorInfo, KenoteConfigErrorState, KenoteConfigUseError } from './error'
 import { KenoteConfigServer, KenoteConfigMongoSetting } from './config'
 import { KenoteConfigFix } from './fix'
 import { KenoteConfigDeploy } from './deploy'
-import { Channel, getChannelId, accessNavs, useError } from '../src'
 
 export {
-  accessNavs,
-  Channel,
-  getChannelId,
-  useError,
+  KenoteConfigAccessNavs as accessNavs,
+  KenoteConfigChannelNav as Channel,
+  KenoteConfigGetChannelId as getChannelId,
+  KenoteConfigUseError as useError,
   KenoteConfigBase,
   KenoteConfigCardEmit as CardEmit,
   KenoteConfigColumnEmit as ColumnEmit,

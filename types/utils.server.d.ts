@@ -1,7 +1,25 @@
-import { Maps } from '../types'
+import { Maps, Deploy as IDeploy } from '../types'
 import * as glob from 'glob'
 
-export { default as Deploy } from '../src/deploy'
+/**
+ * 服务器部署类
+ */
+export declare class Deploy {
+
+  /**
+   * 执行远程命令
+   * @param setting IDeploy.Command
+   */
+  public command (setting: IDeploy.Command): Promise<void>
+
+  /**
+   * 上传文件队列
+   * @param setting IDeploy.SFTPOptins
+   * @returns boolean
+   */
+  public upload (setting: IDeploy.SFTPOptins): Promise<boolean>
+  public upload (setting: IDeploy.SFTPOptins, type: 'sftp' | 'ftp'): Promise<boolean>
+}
 
 /**
  * 读取配置文件 集合
