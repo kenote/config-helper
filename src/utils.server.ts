@@ -10,8 +10,6 @@ import * as util from 'util'
 import * as glob from 'glob'
 import * as async from 'async'
 
-templateSettings.interpolate = /{{([\s\S]+?)}}/g
-
 /**
  * 读取配置文件
  * @param file string
@@ -25,6 +23,7 @@ function loadDataFile (file: string, options: Maps<any> = {}): Maps<any> | Maps<
   if (!/^\.(json|yaml|yml)$/.test(path.extname(filePath))) return __data
   let filrStr: string = fs.readFileSync(filePath, 'utf-8')
   if (options.assign) {
+    templateSettings.interpolate = /{{([\s\S]+?)}}/g
     filrStr = template(filrStr)(options.assign)
   }
   if (validator.isJSON(filrStr)) {
