@@ -42,6 +42,9 @@ export default class Channel {
  */
 export function getChannelId (channels: KenoteConfig.Channel[], routePath: string): number {
   for (let channel of channels) {
+    if (routePath.replace(/^\/|\/$/g, '') === channel.label) {
+        return channel.id
+    }
     if (channel.navs) {
       let __channelId: number = findChannelId(channel.navs, channel.id, routePath)
       if (__channelId > -1) {
