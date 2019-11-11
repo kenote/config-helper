@@ -1,6 +1,6 @@
 {
   "name": "kenote-config-helper",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "configuration helper.",
   "main": "dist/index.js",
   "typings": "types/index.d.ts",

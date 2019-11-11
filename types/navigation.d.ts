@@ -1,4 +1,4 @@
-import { Navigation, Queryer, QuerySelect, Columns } from './'
+import { Navigation, Queryer, QuerySelect, Columns, Submit, CardEmit, Maps, KeyMap } from './'
 
 /**
  * 导航器模型
@@ -77,4 +77,77 @@ export interface KenoteConfigNavigation {
    */
   columns           ?: Columns[]
 
+  /**
+   * 提交设置
+   */
+  submit            ?: Submit
+
+  /**
+   * 搜索选项
+   */
+  search            ?: Search
+
+  /**
+   * 卡片模式设置
+   */
+  cards             ?: Cards
+
+  /**
+   * 图表模式
+   */
+  charts            ?: Charts
+
+}
+
+/**
+ * 搜索选项
+ */
+export interface Search {
+
+  /**
+   * 搜索字段
+   */
+  field              : string
+}
+
+/**
+ * 卡片模式设置
+ */
+export interface Cards {
+
+  /**
+   * 类型
+   */
+  type               : string
+
+  /**
+   * 操作单元
+   */
+  emit              ?: CardEmit
+
+  /**
+   * 请求数据
+   */
+  fetch             ?: Maps<string>
+}
+
+/**
+ * 图表模式
+ */
+export interface Charts {
+
+  /**
+   * 类型
+   */
+  type               : string
+
+  /**
+   * 对比数据字段
+   */
+  prop               : string
+
+  /**
+   * 图表步进选项
+   */
+  step               : KeyMap<string>[]
 }

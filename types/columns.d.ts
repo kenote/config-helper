@@ -1,4 +1,4 @@
-import { Format, KeyMap } from './'
+import { Format, KeyMap, ColumnEmit, Columns, Maps } from './'
 
 /**
  * 表格列单元
@@ -8,6 +8,7 @@ import { Format, KeyMap } from './'
  * @param width number
  * @param minwidth number
  * @param format Format | Format[]
+ * @param emit ColumnEmit[]
  */
 export interface KenoteConfigColumns extends KeyMap<string> {
 
@@ -30,5 +31,22 @@ export interface KenoteConfigColumns extends KeyMap<string> {
    * 列单元数据格式化
    */
   format            ?: Format | Format[]
+
+  /**
+   * 操作选项
+   */
+  emit              ?: ColumnEmit[]
+
+  /**
+   * 子表格单元格
+   */
+  columns           ?: Columns[]
+
+  /**
+   * 列单元数据转译
+   */
+  parse             ?: Maps<string | number> | string
+
+  
 
 }

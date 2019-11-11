@@ -52,7 +52,7 @@ export interface KenoteConfigQueryer extends KeyMap<string> {
   /**
    * 选项数据; 取自远端 API 请求
    */
-  fetch             ?: Fetch
+  fetch             ?: Fetch | string
 
   /**
    * 禁止字段输入、选择
@@ -78,4 +78,24 @@ export interface KenoteConfigQueryer extends KeyMap<string> {
    * 此为特殊需求字段，目的是在多选单元里抽取指定参数进行拼接
    */
   cardinal          ?: string
+
+  /**
+   * 数字最小值
+   */
+  min               ?: number
+
+  /**
+   * 数字最大值
+   */
+  max               ?: number
+
+  /**
+   * 是否多选
+   */
+  multiple          ?: boolean
+
+  /**
+   * 是否分组
+   */
+  grouping          ?: boolean
 }

@@ -7,6 +7,7 @@ import { KeyMap, Maps, Queryer } from './'
  * @param api string
  * @param param string | string[]
  * @param options Maps<string | number> | KeyMap<string | number>[]
+ * @param queryer Queryer[]
  */
 export interface KenoteConfigColumnEmit extends KeyMap<string> {
 
@@ -24,6 +25,21 @@ export interface KenoteConfigColumnEmit extends KeyMap<string> {
    * 参数选项
    */
   options           ?: Maps<string | number> | KeyMap<string | number>[]
+
+  /**
+   * 查询器模型
+   */
+  queryer           ?: Queryer[]
+
+  /**
+   * 模版
+   */
+  template          ?: string
+
+  /**
+   * 模版参数
+   */
+  context           ?: Maps<string | number>
 
 
 }
