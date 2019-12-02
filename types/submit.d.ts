@@ -1,4 +1,4 @@
-import { Maps } from './'
+import { Maps, KeyMap } from './'
 
 /**
  * 数据提交选项
@@ -47,4 +47,25 @@ export interface KenoteConfigSubmit {
    */
   message           ?: string
 
+  /**
+   * RSTP 选项
+   */
+  rstps             ?: Rstps
+
+}
+
+/**
+   * RSTP 选项
+   */
+interface Rstps {
+
+  /**
+   * 默认值
+   */
+  value             : string
+
+  /**
+   * 赋值参数；headers:rtsp_key | post:rtsp_key | get:rtsp_key
+   */
+  params            : string
 }

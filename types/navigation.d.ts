@@ -97,6 +97,16 @@ export interface KenoteConfigNavigation {
    */
   charts            ?: Charts
 
+  /**
+   * 多表模式
+   */
+  multiTable        ?: MultiTable[]
+
+  /**
+   * 自定义选项
+   */
+  options           ?: Maps<any>
+
 }
 
 /**
@@ -150,4 +160,25 @@ export interface Charts {
    * 图表步进选项
    */
   step               : KeyMap<string>[]
+}
+
+/**
+ * 多表模式
+ */
+export interface MultiTable extends KeyMap<string> {
+
+  /**
+   * 类型
+   */
+  type               : string
+
+  /**
+   * 表格单元
+   */
+  columns            : Columns[]
+
+  /**
+   * 选项
+   */
+  options           ?: Cards | Charts
 }
