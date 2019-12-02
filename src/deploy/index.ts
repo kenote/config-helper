@@ -165,7 +165,7 @@ function serverInfo (connect: IDeploy.Connected): ConnectConfig | ScpOptions {
     config.username = auth as string
   }
   else {
-    config.username = protocol && protocol.replace(/(\:)$/, '') as string
+    config.username = (protocol && protocol.replace(/(\:)$/, '')) as string
     config.password = auth as string
   }
   return config
