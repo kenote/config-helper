@@ -162,11 +162,11 @@ function serverInfo (connect: IDeploy.Connected): ConnectConfig | ScpOptions {
   if (hostname) config.host = hostname
   if (port) config.port = Number(port)
   if (slashes) {
-    config.username = auth
+    config.username = auth as string
   }
   else {
-    config.username = protocol && protocol.replace(/(\:)$/, '')
-    config.password = auth
+    config.username = protocol && protocol.replace(/(\:)$/, '') as string
+    config.password = auth as string
   }
   return config
 }
