@@ -68,12 +68,18 @@ export function loadData (file: string, type: 'object' | 'array' | false = false
 }
 
 /**
- * 配置文件排序；将 *.default.(json|yaml|yml) 排到最前面
+ * 配置文件排序；将 *.default.(json|yaml|yml) 排到最前面, 将 *.release.(json|yaml|yml) 排到最后面
  * @param files string[]
  */
 function dataFileSort (files: string[]): string[] {
   let reg: RegExp = /^(\S+)\.(default)\.(json|yaml|yml)$/
-  return files.sort( (a, b) => a.replace(reg, '0$1.$3') > b.replace(reg, '0$1.$3') ? 1 : -1 )
+  files = files.sort( (a, b) => a.replace(reg, '0$1.$3') > b.replace(reg, '0$1.$3') ? 1 : -1 )
+  let reg_release: RegExp = /^(\S+)\.(release)\.(json|yaml|yml)$/
+  let absolute_release = /^(release)\.(json|yaml|yml)$/
+  let files_arr1: string[] = files.filter( name => !reg_release.test(name) )
+  let files_arr2: string[] = files.filter( name => reg_release.test(name) && !absolute_release.test(name) )
+  let files_arr3: string[] = files.filter( name => absolute_release.test(name) )
+  return [ ...files_arr1, ...files_arr2, ...files_arr3 ]
 }
 
 /**
