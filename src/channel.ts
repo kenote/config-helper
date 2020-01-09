@@ -79,10 +79,10 @@ export function accessNavs (navs: Navigation[], access?: string[]): Navigation[]
  * @returns Navigation[]
  */
 function initMaps (navs: Navigation[], maps: Navigation[] = []): Navigation[] {
-  navs.forEach( nav => {
+  navs.forEach( (nav: Navigation, __v: number) => {
     let { index, name } = nav
     nav.maps = [ ...maps ]
-    nav.maps.push({ index, name })
+    nav.maps.push({ index, name, __v })
     if (nav.children) {
       return initMaps(nav.children, nav.maps)
     }

@@ -107,6 +107,11 @@ export interface KenoteConfigNavigation {
    */
   options           ?: Maps<any>
 
+  /**
+   * map 索引
+   */
+  __v               ?: number
+
 }
 
 /**
