@@ -1,7 +1,7 @@
 import * as path from 'path'
 import * as fs from 'fs-extra'
 import * as yaml from 'js-yaml'
-import * as validator from 'validator'
+import validator from 'validator'
 import { Maps } from '../types'
 import { template, templateSettings } from 'lodash'
 import * as weblog from 'webpack-log'
