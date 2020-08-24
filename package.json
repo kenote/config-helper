@@ -1,6 +1,6 @@
 {
   "name": "kenote-config-helper",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "configuration helper.",
   "main": "dist/index.js",
   "typings": "types/index.d.ts",
@@ -31,7 +31,7 @@
     "colors": "^1.4.0",
     "fs-extra": "^8.1.0",
     "js-yaml": "^3.13.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "scp2": "https://github.com/spmjs/node-scp2",
     "url-parse-lax": "^4.0.0",
     "validator": "^13.1.1",
